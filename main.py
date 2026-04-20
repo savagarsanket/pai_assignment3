@@ -75,3 +75,32 @@ X_test = scaler.transform(X_test)
 # Task: Model Training, Validation, Evaluation
 # ==========================================
 
+
+model = LogisticRegression(max_iter=2000)
+
+# Cross validation
+cv_scores = cross_val_score(model, X, Y, cv=3)
+
+print("\nCross Validation Scores:", cv_scores)
+print("Mean Accuracy:", cv_scores.mean())
+
+# Train model
+model.fit(X_train, Y_train)
+
+train_score = model.score(X_train, Y_train)
+test_score = model.score(X_test, Y_test)
+
+print("\nTrain Accuracy:", train_score)
+print("Test Accuracy:", test_score)
+
+# Predictions
+Y_pred = model.predict(X_test)
+
+print("\nFinal Accuracy:", accuracy_score(Y_test, Y_pred))
+print("Confusion Matrix:\n", confusion_matrix(Y_test, Y_pred))
+print("Classification Report:\n", classification_report(Y_test, Y_pred))
+
+print("\nFinal Result:")
+print(f"Train Accuracy: {train_score:.4f}")
+print(f"Test Accuracy: {test_score:.4f}")
+print(f"Cross Validation Accuracy: {cv_scores.mean():.4f}")
