@@ -3,7 +3,8 @@
 ## Team Members
 - Sanket – Data Loading & Preprocessing  
 - Prajwal – Feature Engineering & Data Preparation  
-- Ranjit – Model Training & Evaluation  
+- Ranjit – Model Training & Evaluation
+- Anurag singh dodiya - Encoding
 
 ## Problem Statement
 Predict whether a passenger survived or not using machine learning.
